@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_interpolation_to_compose_strings
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_interpolation_to_compose_strings, must_be_immutable, unnecessary_import
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -19,7 +19,7 @@ class _GallaryPageState extends State<GallaryPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Gallary App",
+          "Gallery App",
           style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,
