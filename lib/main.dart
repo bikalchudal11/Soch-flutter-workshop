@@ -2,6 +2,8 @@
 
 import 'package:day1/calculator/caculator_page.dart';
 import 'package:day1/day4.dart';
+import 'package:day1/day5%20HW/score_ui.dart';
+import 'package:day1/day5.dart';
 import 'package:day1/gallary/gallary_page.dart';
 import 'package:day1/home_page.dart';
 import 'package:day1/weather_widget/weather_widget.dart';
@@ -17,8 +19,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(fontFamily: "Poppins"),
       debugShowCheckedModeBanner: false,
-      home: WeatherWidget(),
+      home: ScoreUI(),
     );
   }
 }

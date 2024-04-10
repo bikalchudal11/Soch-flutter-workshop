@@ -103,32 +103,33 @@ class WeatherWidget extends StatelessWidget {
                             ),
                           ),
                           Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
                                 "11:45",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(
                                     fontSize: 20,
-                                    fontWeight: FontWeight.w500,
                                   ),
                                 ),
                               ),
                               SizedBox(
                                 width: 4,
                               ),
-                              Text(
-                                "AM",
-                                style: GoogleFonts.poppins(
-                                  textStyle: TextStyle(
-                                    fontSize: 10,
+                              Padding(
+                                padding: const EdgeInsets.only(top: 5.0),
+                                child: Text(
+                                  "AM",
+                                  style: GoogleFonts.poppins(
+                                    textStyle: TextStyle(
+                                      fontSize: 10,
+                                    ),
                                   ),
                                 ),
                               ),
                             ],
                           ),
                           Text(
-                            "M T W T F S S",
+                            "M T W̲ T F̲ S S",
                             style: GoogleFonts.poppins(
                               textStyle: TextStyle(
                                 fontSize: 16,
