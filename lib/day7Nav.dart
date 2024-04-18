@@ -58,9 +58,6 @@ class _Day7NavState extends State<Day7Nav> {
               height: 50,
               width: 190,
               child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: 
-                ),
                 onPressed: () {
                   Navigator.pop(context);
                 },
