@@ -204,7 +204,7 @@ class _Day8HwState extends State<Day8Hw> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "No of balls: ",
+                      "BG color Green: ",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
