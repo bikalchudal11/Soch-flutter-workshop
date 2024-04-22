@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:day1/day10%20HW/day10HW.dart';
+import 'package:day1/day10.dart';
 import 'package:day1/day7.dart';
 import 'package:day1/day8%20HW/day8hw.dart';
 import 'package:day1/day8.dart';
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: "Poppins"),
       debugShowCheckedModeBanner: false,
-      home: Day9Hw(),
+      home: Day10HW(),
     );
   }
 }
