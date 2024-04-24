@@ -24,9 +24,12 @@ class PeopleDetails extends StatelessWidget {
             height: 120,
             width: 120,
             decoration: BoxDecoration(
-                border: Border.all(width: 2),
-                shape: BoxShape.circle,
-                image: DecorationImage(image: NetworkImage(personImageUrl))),
+              border: Border.all(width: 2),
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: NetworkImage(personImageUrl),
+              ),
+            ),
           ),
           SizedBox(
             height: 20,
