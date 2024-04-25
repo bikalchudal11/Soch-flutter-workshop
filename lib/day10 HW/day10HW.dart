@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, file_names
 
 import 'package:day1/day10%20HW/people_details.dart';
 import 'package:day1/day10%20HW/people_list.dart';
