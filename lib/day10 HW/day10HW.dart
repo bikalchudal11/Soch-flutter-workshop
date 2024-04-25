@@ -4,9 +4,14 @@ import 'package:day1/day10%20HW/people_details.dart';
 import 'package:day1/day10%20HW/people_list.dart';
 import 'package:flutter/material.dart';
 
-class Day10HW extends StatelessWidget {
+class Day10HW extends StatefulWidget {
   const Day10HW({super.key});
 
+  @override
+  State<Day10HW> createState() => _Day10HWState();
+}
+
+class _Day10HWState extends State<Day10HW> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +34,15 @@ class Day10HW extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) => PeopleDetails(
+                                onAgeChange: (updatedAge) {
+                                  peopleList[index]['age'] = updatedAge;
+                                  setState(() {});
+                                },
+                                onGenderChange: (changeVakoGender) {
+                                  peopleList[index]['gender'] =
+                                      changeVakoGender;
+                                  setState(() {});
+                                },
                                 personAge: peopleList[index]['age'],
                                 personBio: peopleList[index]['bio'],
                                 personGender: peopleList[index]['gender'],
@@ -46,7 +60,11 @@ class Day10HW extends StatelessWidget {
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15),
                     ),
-                    border: Border.all(),
+                    border: Border.all(
+                      color: peopleList[index]['gender'] == 'male'
+                          ? Colors.blue
+                          : Colors.pink,
+                    ),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
