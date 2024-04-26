@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, file_names
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:day1/day10%20HW/people_details.dart';
 import 'package:day1/day10%20HW/people_list.dart';
@@ -34,6 +34,14 @@ class _Day10HWState extends State<Day10HW> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => PeopleDetails(
+                                nameChange: (value) {
+                                  peopleList[index]['name'] = value;
+                                  setState(() {});
+                                },
+                                bioChange: (value) {
+                                  peopleList[index]['bio'] = value;
+                                  setState(() {});
+                                },
                                 onAgeChange: (updatedAge) {
                                   peopleList[index]['age'] = updatedAge;
                                   setState(() {});

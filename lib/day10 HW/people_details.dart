@@ -5,12 +5,16 @@ import 'package:day1/day10%20HW/people_list.dart';
 import 'package:flutter/material.dart';
 
 class PeopleDetails extends StatefulWidget {
+  final Function(String) nameChange;
+  final Function(String) bioChange;
   Function(String) onGenderChange;
   Function(int) onAgeChange;
   String personName, personImageUrl, personBio, personGender;
   int personAge;
   PeopleDetails(
       {super.key,
+      required this.nameChange,
+      required this.bioChange,
       required this.onAgeChange,
       required this.personGender,
       required this.personAge,
@@ -24,6 +28,18 @@ class PeopleDetails extends StatefulWidget {
 }
 
 class _PeopleDetailsState extends State<PeopleDetails> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController bioController = TextEditingController();
+  late String name = widget.personName;
+  late String bio = widget.personBio;
+
+  @override
+  void initState() {
+    super.initState();
+    nameController.text = widget.personName;
+    bioController.text = widget.personBio;
+  }
+
   genderCheck(value) {
     if (widget.personGender == "male") {
       return "female";
@@ -58,7 +74,7 @@ class _PeopleDetailsState extends State<PeopleDetails> {
             height: 20,
           ),
           Text(
-            widget.personName,
+            name,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -155,6 +171,68 @@ class _PeopleDetailsState extends State<PeopleDetails> {
           SizedBox(
             height: 10,
           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: TextField(
+              controller: nameController,
+              decoration: InputDecoration(
+                labelText: "Name",
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.green),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.green,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: TextField(
+              controller: bioController,
+              decoration: InputDecoration(
+                labelText: "Bio",
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.green),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.green,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          ElevatedButton(
+            style: ButtonStyle(
+              foregroundColor: MaterialStatePropertyAll(
+                Colors.white,
+              ),
+              backgroundColor: MaterialStatePropertyAll(
+                Colors.deepPurple,
+              ),
+            ),
+            onPressed: () {
+              setState(() {
+                name = nameController.text;
+                bio = bioController.text;
+                widget.personBio = bio;
+              });
+              widget.nameChange(name);
+              widget.bioChange(bio);
+            },
+            child: Text(
+              "Update",
+            ),
+          )
         ],
       ),
     );
